@@ -25,9 +25,7 @@ SECRET_KEY = 'django-insecure-n)=cphu7h2$6#g4(ssh+^z(y8d$%f@w7@)%2jnxgq)gxdp0o0y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost', '127.0.0.1', '0.0.0.0'
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -77,12 +75,8 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-        'USER': 'projex',
-        'PASSWORD': 'pjxpassword',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
