@@ -609,11 +609,11 @@ progress {
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: inherit;
 }
 
 .img-max {
-  max-height: 35rem;
+  height: fit-content;
 }
 
 .img-thumbnail {
@@ -10911,6 +10911,7 @@ html {
 
 .divider-custom {
   margin: 1.25rem 0 1.5rem;
+  padding-bottom: 2.5rem;
   width: 100%;
   display: flex;
   justify-content: center;
