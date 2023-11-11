@@ -1,3 +1,4 @@
+
 <!-- projects/templates/projects/project_index.html -->
 {% load static %}
 {% load bootstrap_icons %}
@@ -41,15 +42,15 @@
                         {% else %}
                             <div class="carousel-item p-4 border-0">
                         {% endif %}
-                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                        <div class="card-body rounded border-0 p-0">
+                    <div class="card overflow-visible rounded-4 border-0 mb-5">
+                        <div class="card-body overflow-hidden shadow rounded border-0 p-0">
                             <div class="d-flex align-items-center">
                                 <div class="p-5">
                                     <h2 class="fw-bolder">{{ project.title }}</h2>
                                     <p>{{ project.description }}</p>
                                 </div>
                                 {% if project.image %}
-                                    <img class="img-fluid" src="{{ project.image.url }}" alt="..."/>
+                                    <img class="img-fluid img-max" src="{{ project.image.url }}" alt="..."/>
                                 {% endif %}
                             </div>
                         </div>
