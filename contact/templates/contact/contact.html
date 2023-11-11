@@ -1,8 +1,8 @@
-{#{% extends 'base.html' %}#}
-{% extends 'pages/home.html' %}
+
+{% load static %}
+{% load bootstrap_icons %}
 
 
-{% block contact_content %}
     <!-- Contact Section-->
     <section class="page-section" id="contact">
         <div class="container px-5">
@@ -11,15 +11,15 @@
                     <!-- Contact Section Heading-->
                     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
                     <!-- Icon Divider-->
-                    <div class="divider-custom">
+                    <div class="divider-custom pb-5">
                         <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-icon">{% bs_icon 'star-fill' size='2.5rem' extra_classes="bi-valign-icon" %}</div>
                         <div class="divider-custom-line"></div>
                     </div>
                     <!-- Contact Section Form-->
                     <div class="row justify-content-center">
-                        <div class="col-lg-8 col-xl-7">
-                            <form class="form-floating action="/contact/" id="contactForm" method="post">
+                        <div class="col-lg-8 col-xl-9">
+                            <form class="form-floating action='/contact/'" id="contactForm" method="post">
                             {% csrf_token %}
 
                             {% for field in form %}
@@ -48,4 +48,3 @@
             </div>
         </div>
     </section>
-{% endblock %}

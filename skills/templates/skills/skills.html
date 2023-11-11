@@ -1,0 +1,65 @@
+{% load static %}
+{% load bootstrap_icons %}
+
+<section class="page-section bg-primary text-white mb-0" id="skills">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+
+                <!-- Skills Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">Skills</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom pb-3 divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">{% bs_icon 'star-fill' size='2.5rem' extra_classes="bi-valign-icon" %}</div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <div class="card bg-primary-subtle text-secondary rounded shadow border-0 mb-5">
+                    <div class="card-body bg-primary-subtle container shadow rounded p-5">
+{#                        <div class="card bg-primary text-secondary rounded border-0 mb-5">#}
+{#                    <div class="card-body bg-primary container rounded p-5">#}
+                        <!-- Professional skills list-->
+                        <div class="mb-5">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature bg-gradient-tools text-primary shadow rounded-2 me-3">{% bs_icon 'tools' size='2.75rem' %}</div>
+                                <h3 class="fw-bolder mb-0"><span
+                                        class="text-gradient d-inline">Professional Skills</span>
+                                </h3>
+                            </div>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-5 gy-3 rounded">
+                                {% for skill in skills %}
+                                    <div class="col mb-4 mb-md-0">
+{#                                        <div class="d-flex justify-content-center bg-primary-subtle shadow rounded-4 p-3 h-100">#}
+                                            <div class="d-flex justify-content-center bg-secondary-subtle shadow rounded-4 p-3 h-100">
+                                            <span>{{ skill.name }}</span></div>
+                                    </div>
+                                {% endfor %}
+                                <div class="col mb-4 mb-md-0">
+                            </div>
+                        </div>
+
+                        <!-- Language list-->
+                        <div class="mb-0">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature bg-gradient-tools text-primary shadow rounded-2 me-3">{% bs_icon 'code-slash' size='2.75rem' %}</div>
+                                <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages</span>
+                                </h3>
+                            </div>
+                            <div class="container">
+                                <div class="row row-cols-1 row-cols-lg-3 gx-5 gy-3 rounded">
+                                    {% for language in languages %}
+                                        <div class="col mb-4 mb-md-0">
+                                            <div class="d-flex justify-content-center bg-primary-subtle shadow rounded-4 p-3 h-100">
+                                                <span>{{ language.name }}</span></div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

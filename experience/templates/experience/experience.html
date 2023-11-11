@@ -1,0 +1,61 @@
+{% load static %}
+{% load bootstrap_icons %}
+
+<section class="page-section bg-primary text-white mb-0" id="experience">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                <!-- Experience Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">Experience</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom pb-5 divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">{% bs_icon 'star-fill' size='2.5rem' extra_classes="bi-valign-icon" %}</div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <!-- Experience Card 1-->
+                <div class="card  border-0 shadow rounded mb-5">
+                    <div class="card-body shadow bg-primary-subtle rounded p-5">
+                        <div class="row align-items-center gx-5">
+                            <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                <div class="bg-secondary-subtle p-4 rounded-4">
+                                    <div class="text-primary fw-bolder mb-2">2019 - Present</div>
+                                    <div class="small fw-bolder">Web Developer</div>
+                                    <div class="small text-muted">Stark Industries</div>
+                                    <div class="small text-muted">Los Angeles, CA</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium,
+                                    voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed
+                                    aliquam non voluptate corrupti excepturi maxime porro fuga.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% for position in positions %}
+                    <div class="card border-0 rounded-4 mb-5">
+                        <div class="card-body shadow rounded bg-primary-subtle p-5">
+                            <div class="row align-items-center gx-5">
+                                <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                    <div class="bg-secondary-subtle p-4 rounded-4">
+                                        <div class="text-primary fw-bolder mb-2">{{ position.time }}</div>
+                                        <div class="small fw-bolder">{{ position.title }}r</div>
+                                        <div class="small text-muted">{{ position.company }}</div>
+                                        <div class="small text-muted">{{ position.location }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div>{{ position.description }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+</section>

@@ -26,7 +26,7 @@
                     </li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a>
                     </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#education">Education</a>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a>
                     </li>
@@ -43,9 +43,9 @@
             <!-- Masthead Heading-->
             <h1 class="masthead-heading text-uppercase mb-0">Andres Preciado</h1>
             <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
+            <div class="divider-custom pb-5 divider-light">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-icon">{% bs_icon 'star-fill' size='2.5rem' extra_classes="bi-valign-icon" %}</div>
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Masthead Subheading-->
@@ -56,233 +56,23 @@
 
 
     <!---- About Me Section ----->
-    <section class="page-section" id="about-me">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-11 col-xl-9 col-xxl-8">
-                    <!-- About Me Section Heading-->
-                    <h2 class="page-section-heading text-center text-uppercase text-secondary">About Me</h2>
-                    <!-- Icon Divider-->
-                    <div class="divider-custom">
-                        <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                        <div class="divider-custom-line"></div>
-                    </div>
-                    <!-- About Me Section Content-->
-                    <div class="container-fluid">
-                        <div class="row ms-auto"><p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis eget nunc lobortis
-                            mattis.
-                            Odio morbi quis commodo odio aenean sed adipiscing. Sit amet mauris commodo quis imperdiet
-                            massa.
-                            Orci sagittis eu volutpat odio facilisis mauris sit. Sit amet nisl purus in. Maecenas
-                            ultricies mi
-                            eget mauris pharetra et ultrices neque. Vulputate eu scelerisque felis imperdiet. Lacus
-                            suspendisse
-                            faucibus interdum posuere lorem ipsum dolor. Libero enim sed faucibus turpis in eu. Ut
-                            tellus
-                            elementum sagittis vitae et leo duis ut.</p></div>
-                        <div class="row ms-auto"><p class="lead">Ipsum faucibus vitae aliquet nec ullamcorper sit amet
-                            risus nullam. Vel pretium lectus quam id leo in. Bibendum enim facilisis gravida neque
-                            convallis a
-                            cras semper. Suspendisse in est ante in nibh. Pulvinar elementum integer enim neque.
-                            Pellentesque
-                            elit eget gravida cum sociis natoque penatibus. Eleifend donec pretium vulputate sapien nec
-                            sagittis. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec
-                            sagittis. Nunc
-                            mi ipsum faucibus vitae aliquet nec ullamcorper sit. Consequat mauris nunc congue nisi vitae
-                            suscipit tellus mauris a. Massa eget egestas purus viverra accumsan in nisl nisi. In vitae
-                            turpis
-                            massa sed elementum tempus egestas sed.</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'about/about.html' %}
 
-    <section class="page-section bg-primary text-white mb-0" id="skills">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-11 col-xl-9 col-xxl-8">
-                    <!-- Skills Section Heading-->
-                    <h2 class="page-section-heading text-center text-uppercase text-white">Skills and Education</h2>
-                    <!-- Icon Divider-->
-                    <div class="divider-custom divider-light">
-                        <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                        <div class="divider-custom-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
+     <!-- Skills Section -->
+    {% include "skills/skills_v2.html" %}
 
 
     <!-- Portfolio Section-->
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-11 col-xl-9 col-xxl-8">
-                    <!-- Portfolio Section Heading-->
-                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                    <!-- Icon Divider-->
-                    <div class="divider-custom">
-                        <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                        <div class="divider-custom-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include "projects/project_index.html" %}
 
 
-    <!-- Education Section-->
-    <section class="page-section bg-primary text-white mb-0" id="education">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-11 col-xl-9 col-xxl-8">
-
-                    <!-- Education Section Heading-->
-                    <h2 class="page-section-heading text-center text-uppercase text-white">Education</h2>
-                    <!-- Icon Divider-->
-                    <div class="divider-custom divider-light">
-                        <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                        <div class="divider-custom-line"></div>
-                    </div>
-
-                    <div class="card bg-primary text-secondary border-0 mb-5">
-                        <div class="card-body bg-primary container p-5 shadow rounded mb-5">
-                            <!-- Professional skills list-->
-                            <div class="mb-5">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="feature bg-gradient-tools text-primary shadow rounded-2 me-3">{% bs_icon 'tools' size='2.75rem' %}</div>
-                                    <h3 class="fw-bolder mb-0"><span
-                                            class="text-gradient d-inline">Professional Skills</span>
-                                    </h3>
-                                </div>
-                                <div class="row row-cols-1 row-cols-md-3 gx-5 gy-3 rounded">
-                                    <div class="col mb-4 mb-md-0 text-wrap text-center">
-                                        <div class="d-flex justify-content-center bg-primary-subtle shadow rounded-4 p-3 h-100"><span>colssddsasdkas</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="d-flex bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="d-flex bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="d-flex bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="d-flex bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="d-flex bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="d-flex bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Language list-->
-                            <div class="mb-0">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="feature bg-gradient-tools text-primary shadow rounded-2 me-3">{% bs_icon 'code-slash' size='2.75rem' %}</div>
-                                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages</span>
-                                    </h3>
-                                </div>
-                                <div class="container">
-                                <div class="row row-cols-1 row-cols-lg-3 gx-5 gy-3 rounded">
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                    <div class="col mb-4 mb-md-0">
-                                        <div class="bg-primary-subtle justify-content-center shadow rounded-4 p-3 h-100"><span>col</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        {#        <div class="container">#}
-        {#            <!-- Education Section Heading-->#}
-        {#            <h2 class="page-section-heading text-center text-uppercase text-white">Education</h2>#}
-        {#            <!-- Icon Divider-->#}
-        {#            <div class="divider-custom divider-light">#}
-        {#                <div class="divider-custom-line"></div>#}
-        {#                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>#}
-        {#                <div class="divider-custom-line"></div>#}
-        {#            </div>#}
-        {#            <!-- Skillset Card-->#}
-        {#                            <div class="card bg-primary border-0 mb-5 text-white">#}
-        {#                                <div class="card-body text-center p-5">#}
-        {#                                    <!-- Professional skills list-->#}
-        {#                                    <div class="mb-5">#}
-        {#                                        <div class="d-flex bg-align-items-center mb-4">#}
-        {#                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">{% bs_icon 'tools' %}</div>#}
-        {#                                            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional Skills</span></h3>#}
-        {#                                        </div>#}
-        {#                                        <div class="row row-cols-1 row-cols-md-3 mb-4">#}
-        {#                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-content-center bg-secondary rounded-4 p-3 h-100"><p>SEO/SEM Marketing</p></div></div>#}
-        {#                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-secondary rounded-4 p-3 h-100">Statistical Analysis</div></div>#}
-        {#                                            <div class="col"><div class="d-flex align-items-center bg-secondary rounded-4 p-3 h-100">Web Development</div></div>#}
-        {#                                        </div>#}
-        {#                                        <div class="row row-cols-1 row-cols-md-3">#}
-        {#                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Network Security</div></div>#}
-        {#                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Adobe Software Suite</div></div>#}
-        {#                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">User Interface Design</div></div>#}
-        {#                                        </div>#}
-        {#                                    </div>#}
-        {#                                    <!-- Languages list-->#}
-        {#                                    <div class="mb-0">#}
-        {#                                        <div class="d-flex align-items-center mb-4">#}
-        {#                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">{% bs_icon 'code-slash' %}</div>#}
-        {#                                            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages</span></h3>#}
-        {#                                        </div>#}
-        {#                                        <div class="row row-cols-1 row-cols-md-3 mb-4">#}
-        {#                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML</div></div>#}
-        {#                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS</div></div>#}
-        {#                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div></div>#}
-        {#                                        </div>#}
-        {#                                        <div class="row row-cols-1 row-cols-md-3">#}
-        {#                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div></div>#}
-        {#                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Ruby</div></div>#}
-        {#                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Node.js</div></div>#}
-        {#                                        </div>#}
-        {#                                    </div>#}
-        {#                                </div>#}
-        {#                            </div>#}
-        {#        </div>#}
-    </section>
-
-
+    <!-- Experience Section-->
+    {% include 'experience/experience.html' %}
 
 
     <!-- Contact Section-->
-    {% block contact_content %} {% endblock contact_content %}
+    {% include "contact/contact.html" %}
 
 
 
