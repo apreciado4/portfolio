@@ -10,4 +10,3 @@ class ContactModel(models.Model):
     message = models.TextField()
 
 
-
