@@ -3,7 +3,7 @@ from contact.forms import ContactForm
 from projects.models import Project
 from experience.models import Position
 from skills.models import Skills, Langauges
-from django.http import HttpResponse
+from django.http import HttpResponse, FileResponse, Http404
 
 
 # Create your views here.
@@ -29,6 +29,13 @@ def home(request):
         'languages': languages,
     }
     return render(request, 'pages/home.html', context)
+
+
+def resume(request):
+    try:
+        return FileResponse(open('static/pdf/TestPDF.pdf', 'rb'), content_type='application/pdf')
+    except FileNotFoundError:
+        raise Http404()
 
 
 def success(request):

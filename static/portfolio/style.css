@@ -318,6 +318,11 @@ svg.mdi.bi-valign-icon {
     vertical-align: -0.4rem;
 }
 
+svg.bi.bi-valign-default,
+svg.mdi.bi-valign-icon {
+  vertical-align: -.125rem;
+}
+
 table {
   caption-side: bottom;
   border-collapse: collapse;
