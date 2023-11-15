@@ -1,9 +1,10 @@
+import django.http
 from django.shortcuts import render, redirect
 from contact.forms import ContactForm
 from projects.models import Project
 from experience.models import Position
 from skills.models import Skills, Langauges
-from django.http import HttpResponse, FileResponse, Http404
+from django.http import HttpResponse, FileResponse, Http404, HttpResponseServerError
 
 
 # Create your views here.
@@ -36,6 +37,14 @@ def resume(request):
         return FileResponse(open('static/pdf/TestPDF.pdf', 'rb'), content_type='application/pdf')
     except FileNotFoundError:
         raise Http404()
+
+
+def server_500(request):
+    raise HttpResponseServerError
+
+
+def server_404(request):
+    raise Http404
 
 
 def success(request):

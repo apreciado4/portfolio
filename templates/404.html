@@ -1,0 +1,22 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bootstrap_icons %}
+
+{% block title %}Error 404{% endblock %}
+
+
+{% block page_content %}
+<body class="bg-primary text-white">
+<div class="d-flex text-center justify-content-center align-content-center p-5 m-5">
+<div class="container p-5 m-5">
+    <h1>Error 404 </h1>
+    <h1>{% bs_icon 'bug' size='5rem'%}</h1>
+    <p>Sorry, We found a bug! </p>
+</div>
+</div>
+</body>
+
+{% endblock %}
