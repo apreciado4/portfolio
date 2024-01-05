@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 # Configure Django App for Heroku.
 import django_on_heroku
 
@@ -21,20 +23,26 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_ROOT = BASE_DIR / 'uploads/'
 MEDIA_URL = 'media/'
 
+load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # This key is ONLY FOR DEVELOPMENT
-SECRET_KEY = 'django-insecure-n)=cphu7h2$6#g4(ssh+^z(y8d$%f@w7@)%2jnxgq)gxdp0o0y'
+# SECRET_KEY = 'django-insecure-n)=cphu7h2$6#g4(ssh+^z(y8d$%f@w7@)%2jnxgq)gxdp0o0y'
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG =  os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
-ALLOWED_HOSTS = [
-    'localhost', '127.0.0.1', '0.0.0.0'
-]
+
+# ALLOWED_HOSTS = [
+#     'localhost', '127.0.0.1', '0.0.0.0'
+# ]
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 
 
 # Application definition
@@ -92,10 +100,43 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+##################################################################
+##################################################################
+##################################################################
+#
+#        FOR DEBUG ONLY
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'portfoliodb',
+#         'USER': 'dev',
+#         'PASSWORD': 'devpassword',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
+##################################################################
+##################################################################
+##################################################################
+#
+#     FOR PRODUCTION
+#
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DBNAME'),
+        'HOST': os.environ.get('DBHOST'),
+        'USER': os.environ.get('DBUSER'),
+        'PASSWORD': os.environ.get('DBPASS'),
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
 
@@ -103,7 +144,9 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
-CSRF_TRUSTED_ORIGINS = ['https://*.herokuapp.com']
+# CSRF_TRUSTED_ORIGINS = ['https://*.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -168,6 +211,10 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+SECURE_SSL_REDIRECT = \
+    os.getenv('SECURE_SSL_REDIRECT', '0').lower() in ['true', 't', '1']
+if SECURE_SSL_REDIRECT:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Configure Django App for Heroku.
 django_on_heroku.settings(locals())
