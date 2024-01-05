@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Configure Django App for Heroku.
@@ -30,7 +30,7 @@ MEDIA_URL = 'media/'
 SECRET_KEY = 'django-insecure-n)=cphu7h2$6#g4(ssh+^z(y8d$%f@w7@)%2jnxgq)gxdp0o0y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost', '127.0.0.1', '0.0.0.0'
@@ -40,6 +40,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'sendgrid',
     'about.apps.AboutConfig',
     'experience.apps.ExperienceConfig',
     'projects.apps.ProjectsConfig',
@@ -131,6 +132,24 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Mailtrap.io Settings FOR TESTING
+# EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+# EMAIL_HOST_USER = '76695c7ea7bf9d'
+# EMAIL_HOST_PASSWORD = '0520ccc5c846fb'
+# EMAIL_PORT = '2525'
+
+# Mailtrap.io Settings for Heroku
+import requests
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+# MAILTRAP_API_TOKEN = os.getenv('MAILTRAP_API_TOKEN')
+# response = requests.get(f"https://mailtrap.io/api/v1/inboxes.json?api_token={MAILTRAP_API_TOKEN}")
+# credentials = response.json()[0]
+#
+# EMAIL_HOST = credentials['email_domain']
+# EMAIL_HOST_USER = credentials['username']
+# EMAIL_HOST_PASSWORD = credentials['password']
+# EMAIL_PORT = credentials['smtp_ports'][0]
+# EMAIL_USE_TLS = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
