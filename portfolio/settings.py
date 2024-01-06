@@ -199,7 +199,8 @@ SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / 'static/'
+if not DEBUG:
+    STATIC_ROOT = '/home/django/www-data/apreciado/static/'
 
 # Add this in your settings.py file:
 STATICFILES_DIRS = [
