@@ -218,4 +218,4 @@ if SECURE_SSL_REDIRECT:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Configure Django App for Heroku.
-django_on_heroku.settings(locals())
+# django_on_heroku.settings(locals())
