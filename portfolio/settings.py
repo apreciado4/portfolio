@@ -48,6 +48,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'sendgrid',
     'about.apps.AboutConfig',
     'experience.apps.ExperienceConfig',
@@ -66,6 +67,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+# Add whitenoise middleware after the security middleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -100,35 +103,6 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-##################################################################
-##################################################################
-##################################################################
-#
-#        FOR DEBUG ONLY
-#
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'portfoliodb',
-#         'USER': 'dev',
-#         'PASSWORD': 'devpassword',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
-
-##################################################################
-##################################################################
-##################################################################
-#
-#     FOR PRODUCTION
-#
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -203,8 +177,11 @@ STATIC_ROOT = 'app/static/'
 
 # Add this in your settings.py file:
 STATICFILES_DIRS = [
-    BASE_DIR / "static/"
+    BASE_DIR / "tmp/8dc16478a214895/static/"
 ]
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
