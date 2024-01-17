@@ -49,7 +49,6 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
-    'sendgrid',
     'about.apps.AboutConfig',
     'experience.apps.ExperienceConfig',
     'projects.apps.ProjectsConfig',

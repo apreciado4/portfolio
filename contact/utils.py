@@ -1,6 +1,4 @@
 from django.conf import settings
-# from sendgrid import SendGridAPIClient
-# from sendgrid.helpers.mail import Mail, From, To, PlainTextContent, HtmlContent, ReplyTo
 import os
 from django.core.mail import send_mail
 from django.http import Http404
