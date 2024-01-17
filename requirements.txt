@@ -17,7 +17,6 @@ django-bootstrap-icons==0.8.6
 django-on-heroku==1.1.2
 exceptiongroup==1.2.0
 idna==3.4
-importlib==1.0.4
 isodate==0.6.1
 msal==1.26.0
 msal-extensions==1.1.0
