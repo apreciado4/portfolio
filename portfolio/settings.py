@@ -149,24 +149,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Mailtrap.io Settings FOR TESTING
-# EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-# EMAIL_HOST_USER = '76695c7ea7bf9d'
-# EMAIL_HOST_PASSWORD = '0520ccc5c846fb'
-# EMAIL_PORT = '2525'
+# Email Settings
 
-# Mailtrap.io Settings for Heroku
-import requests
-SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
-# MAILTRAP_API_TOKEN = os.getenv('MAILTRAP_API_TOKEN')
-# response = requests.get(f"https://mailtrap.io/api/v1/inboxes.json?api_token={MAILTRAP_API_TOKEN}")
-# credentials = response.json()[0]
-#
-# EMAIL_HOST = credentials['email_domain']
-# EMAIL_HOST_USER = credentials['username']
-# EMAIL_HOST_PASSWORD = credentials['password']
-# EMAIL_PORT = credentials['smtp_ports'][0]
-# EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django_azure_communication_email.EmailBackend'
+AZURE_COMMUNICATION_CONNECTION_STRING = os.environ.get('AZURE_COMMUNICATION_CONNECTION_STRING')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
